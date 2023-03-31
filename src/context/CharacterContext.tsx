@@ -41,7 +41,7 @@ export function CharacterProvider({ children }: CharacterContextProps) {
     async function fetchData() {
       try {
         const fetchedCharacters = await getCharacters(pageNumber.valueOf());
-        setCharacters(fetchedCharacters.data.results);
+        setCharacters(Array.isArray(fetchedCharacters) ? fetchedCharacters : [fetchedCharacters]);
         setIsLoading(false);
       } catch (error) {
         console.log(error);
@@ -71,7 +71,7 @@ export function CharacterProvider({ children }: CharacterContextProps) {
     try {
       setIsLoading(true);
       const data = await fetchCharactersByStatus(status);
-      setCharacters(data);
+      setCharacters(Array.isArray(data) ? data : [data]);
       setIsLoading(false);
     } catch (error) {
       console.log(error);
@@ -84,7 +84,7 @@ export function CharacterProvider({ children }: CharacterContextProps) {
     try {
       setIsLoading(true);
       const data = await fetchCharactersByGender(gender);
-      setCharacters(data);
+      setCharacters(Array.isArray(data) ? data : [data]);
       setIsLoading(false);
     } catch (error) {
       console.log(error);
