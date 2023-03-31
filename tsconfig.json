@@ -16,8 +16,9 @@
     "incremental": true,
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "types": ["cypress", "node"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "cypress/e2e/characters.cy.js"],
   "exclude": ["node_modules"]
 }
