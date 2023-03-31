@@ -113,9 +113,17 @@ export function CharacterProvider({ children }: CharacterContextProps) {
     if (!image) {
       return false;
     }
+    
     if (JSON.stringify(existingIDs).includes(image.name)) {
-      alert('Image already');
-      return false;
+      const index = existingIDs.findIndex((id: any) => id.name === image.name);
+      
+      if (index === -1) {
+        return false;
+      }
+
+      existingIDs.splice(index, 1);
+      await AsyncStorage.setItem(storageKey, JSON.stringify(existingIDs));
+      return true;
     }
 
     const newIDs = [...existingIDs, image];

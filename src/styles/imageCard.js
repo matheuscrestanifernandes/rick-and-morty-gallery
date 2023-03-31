@@ -67,5 +67,6 @@ export const IconHeartActive = styled(AiFillHeart)`
 
   &:hover {
     cursor: pointer;
+    color: #f0f0f0;
   }
 `
