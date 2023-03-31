@@ -1,6 +1,6 @@
 import {CharacterContext} from '@/context/CharacterContext';
 import {useContext, useState} from 'react';
-import {DropdownButton, DropdownContent, DropdownItem, DropdownWrapper} from '../../styles/Filters';
+import {DropdownButton, DropdownContent, DropdownItem, DropdownWrapper} from '../../styles/filters';
 
 export default function Filters() {
   const [isOpenStatus, setIsOpenStatus] = useState(false);
