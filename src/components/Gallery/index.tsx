@@ -2,9 +2,8 @@ import {CharacterContext} from '@/context/CharacterContext';
 import {useContext} from 'react';
 import {ContainerLoading, Loading} from '../../styles/gallery';
 import ImageCard from '../ImageCard';
-import Pagination from '../Pagination';
 
-function Gallery({characters}: any) {
+function Gallery({characters, isFavoriteScreen}: any) {
   const {isLoading} = useContext(CharacterContext);
 
   return (
@@ -16,11 +15,8 @@ function Gallery({characters}: any) {
       ) : (
         <>
           <div>
-            <ImageCard characters={characters}/>
+            <ImageCard characters={characters} isFavoriteScreen={isFavoriteScreen}/>
           </div>
-          <Pagination
-            totalPages={10}
-          />
         </>
       )}
     </div>

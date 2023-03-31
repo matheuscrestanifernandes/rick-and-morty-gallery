@@ -1,10 +1,9 @@
 import {CharacterContext} from '@/context/CharacterContext';
 import {Character} from '@/types';
 import {useContext} from 'react';
-import {AiFillPushpin} from 'react-icons/ai';
-import {CardBorder, CardContainer, CardFooter, CardImage, CardItem, Container} from "../../styles/imageCard";
+import {CardBorder, CardContainer, CardFooter, CardImage, CardItem, Container, IconHeart, IconHeartActive} from "../../styles/imageCard";
 
-function ImageCard({characters}: any) {
+function ImageCard({characters, isFavoriteScreen}: any) {
   const {toggleFavorite} = useContext(CharacterContext);
   
   return (
@@ -20,7 +19,11 @@ function ImageCard({characters}: any) {
                   <p>Species: {index.species}</p>
                 </CardBorder>
                   <div onClick={() => toggleFavorite(index as any)}>
-                    <AiFillPushpin fontSize={30} color="#f0f0f0"/>
+                    {isFavoriteScreen ? (
+                      <IconHeartActive />
+                    ): (
+                      <IconHeart />
+                    )}
                   </div>
               </CardFooter>
             </CardItem>

@@ -114,6 +114,7 @@ export function CharacterProvider({ children }: CharacterContextProps) {
       return false;
     }
     if (JSON.stringify(existingIDs).includes(image.name)) {
+      alert('Image already');
       return false;
     }
 

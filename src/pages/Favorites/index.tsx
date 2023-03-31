@@ -9,7 +9,7 @@ function Favorites(){
   return (
     <>
       <Navbar />
-      <Gallery characters={favCharacters} />
+      <Gallery characters={favCharacters} isFavoriteScreen={true}/>
     </>
   )
 }

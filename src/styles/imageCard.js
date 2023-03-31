@@ -1,3 +1,4 @@
+import {AiFillHeart, AiOutlineHeart} from 'react-icons/ai';
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -49,3 +50,22 @@ export const CardBorder = styled.div`
   padding: .5rem;
   border-left: 4px solid #65C38C;
 `;
+
+export const IconHeart = styled(AiOutlineHeart)`
+  font-size: 30px;
+  color: #f0f0f0;
+
+  &:hover {
+    cursor: pointer;
+    color: #d11f4c;
+  }
+`
+
+export const IconHeartActive = styled(AiFillHeart)`
+  font-size: 30px;
+  color: #d11f4c;
+
+  &:hover {
+    cursor: pointer;
+  }
+`
