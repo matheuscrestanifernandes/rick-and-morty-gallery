@@ -1,21 +1,26 @@
-import {AiFillHeart, AiOutlineHeart} from 'react-icons/ai';
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import styled from "styled-components";
 
 export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(auto, 300px));
   grid-auto-rows: 300px;
-  grid-gap: 1rem;
-  margin: 2rem;
+  grid-gap: 2rem;
+  max-width: 100vw;
+  padding: 0 1rem;
+  justify-content: center;
 `;
 
 export const CardContainer = styled.div`
-  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  grid-auto-rows: 20em;
+  grid-gap: 15px;
 `;
 
 export const CardItem = styled.div`
-  width: 300px;
-  height: 300px;
+  width: 20em;
+  height: 20em;
   position: relative;
   overflow: hidden;
   color: #000;
@@ -28,7 +33,7 @@ export const CardImage = styled.img`
 `;
 
 export const CardFooter = styled.div`
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -47,8 +52,8 @@ export const CardFooter = styled.div`
 export const CardBorder = styled.div`
   display: flex;
   flex-direction: column;
-  padding: .5rem;
-  border-left: 4px solid #65C38C;
+  padding: 0.5rem;
+  border-left: 4px solid #65c38c;
 `;
 
 export const IconHeart = styled(AiOutlineHeart)`
@@ -59,7 +64,7 @@ export const IconHeart = styled(AiOutlineHeart)`
     cursor: pointer;
     color: #d11f4c;
   }
-`
+`;
 
 export const IconHeartActive = styled(AiFillHeart)`
   font-size: 30px;
@@ -69,4 +74,4 @@ export const IconHeartActive = styled(AiFillHeart)`
     cursor: pointer;
     color: #f0f0f0;
   }
-`
+`;
