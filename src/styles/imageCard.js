@@ -1,4 +1,4 @@
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { TbPinnedFilled, TbPinnedOff } from "react-icons/tb";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -53,25 +53,35 @@ export const CardBorder = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
-  border-left: 4px solid #65c38c;
+  border-left: 4px solid #62cdff;
 `;
 
-export const IconHeart = styled(AiOutlineHeart)`
+export const IconPin = styled(TbPinnedOff)`
   font-size: 30px;
-  color: #f0f0f0;
+  color: #62cdff;
 
   &:hover {
     cursor: pointer;
-    color: #d11f4c;
+    color: #ff0000;
   }
 `;
 
-export const IconHeartActive = styled(AiFillHeart)`
+export const IconPinActive = styled(TbPinnedFilled)`
   font-size: 30px;
-  color: #d11f4c;
+  color: #fff;
 
   &:hover {
     cursor: pointer;
-    color: #f0f0f0;
+    color: #62cdff;
+    animation: spin 0.7s;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(-5px);
+    }
   }
 `;

@@ -18,8 +18,8 @@ export const Button = styled.p`
   align-items: center;
   justify-content: center;
   margin: 5px;
-  border-color: ${props => props.active};
-  color: ${props => props.active};
+  border-color: ${(props) => props.active};
+  color: ${(props) => props.active};
   border-radius: 6px;
   border: 1px solid;
   font-size: 18px;
@@ -27,7 +27,7 @@ export const Button = styled.p`
   width: 40px;
 
   &:hover {
-    border-color: #65C38C;
-    color: #65C38C;
+    border-color: #62cdff;
+    color: #62cdff;
   }
 `;

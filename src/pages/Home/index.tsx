@@ -1,22 +1,29 @@
-import {CharacterContext} from '@/context/CharacterContext';
-import {useContext} from 'react';
+import { CharacterContext } from "@/context/CharacterContext";
+import { useContext } from "react";
 
-import Filters from '@/components/Filters';
-import Gallery from "@/components/Gallery";
+import Filters from "@/components/Filters";
+import ImageCard from "@/components/ImageCard";
 import Navbar from "@/components/Navbar";
-import Pagination from '@/components/Pagination';
+import Pagination from "@/components/Pagination";
+import { ContainerLoading, Loading } from "@/styles/loading";
 
-export default function Home(){
-  const {characters} = useContext(CharacterContext);
-  
-  return(
+export default function Home() {
+  const { characters, isLoading } = useContext(CharacterContext);
+
+  return (
     <>
-      <Navbar />
-      <Filters />
-      <Gallery characters={characters} isFavoriteScreen={false}/>
-      <Pagination
-        totalPages={10}
-      />
+      {isLoading ? (
+        <ContainerLoading>
+          <Loading />
+        </ContainerLoading>
+      ) : (
+        <>
+          <Navbar />
+          <Filters />
+          <ImageCard characters={characters} isFavoriteScreen={false} />
+          <Pagination totalPages={10} />
+        </>
+      )}
     </>
-  )
+  );
 }

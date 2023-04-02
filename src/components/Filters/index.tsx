@@ -1,21 +1,35 @@
-import {CharacterContext} from '@/context/CharacterContext';
-import {useContext, useState} from 'react';
-import {DropdownButton, DropdownContent, DropdownItem, DropdownWrapper} from '../../styles/filters';
+import { CharacterContext } from "@/context/CharacterContext";
+import { useContext, useState } from "react";
+import {
+  DropdownButton,
+  DropdownContent,
+  DropdownItem,
+  DropdownWrapper,
+} from "../../styles/filters";
 
 export default function Filters() {
   const [isOpenStatus, setIsOpenStatus] = useState(false);
   const [isOpenGender, setIsOpenGender] = useState(false);
 
-  const {getCharacterByStatus, getCharacterByGender} = useContext(CharacterContext);
+  const { getCharacterByStatus, getCharacterByGender } =
+    useContext(CharacterContext);
 
-  function handleOpenStatus(status: string){
+  function handleOpenStatus(status: string) {
     getCharacterByStatus(status);
     setIsOpenStatus(false);
   }
 
-  function handleOpenGender(gender: string){
+  function handleCloseStatus(status: boolean) {
+    setIsOpenStatus(status);
+  }
+
+  function handleOpenGender(gender: string) {
     getCharacterByGender(gender);
     setIsOpenGender(false);
+  }
+
+  function handleCloseGender(status: boolean) {
+    setIsOpenGender(status);
   }
 
   return (
@@ -24,33 +38,33 @@ export default function Filters() {
         Filter Status
       </DropdownButton>
       {isOpenStatus && (
-        <DropdownContent>
-          <DropdownItem onClick={() => handleOpenStatus('alive')}>
+        <DropdownContent onMouseLeave={() => setIsOpenStatus(false)}>
+          <DropdownItem onClick={() => handleOpenStatus("alive")}>
             Alive
           </DropdownItem>
-          <DropdownItem onClick={() => handleOpenStatus('dead')}>
+          <DropdownItem onClick={() => handleOpenStatus("dead")}>
             Dead
           </DropdownItem>
-          <DropdownItem onClick={() => handleOpenStatus('unknown')}>
+          <DropdownItem onClick={() => handleOpenStatus("unknown")}>
             Unknown
           </DropdownItem>
         </DropdownContent>
       )}
-       <DropdownButton onClick={() => setIsOpenGender(!isOpenGender)}>
+      <DropdownButton onClick={() => setIsOpenGender(!isOpenGender)}>
         Filter Genders
       </DropdownButton>
       {isOpenGender && (
-        <DropdownContent>
-          <DropdownItem onClick={() => handleOpenGender('female')}>
+        <DropdownContent onMouseLeave={() => setIsOpenGender(false)}>
+          <DropdownItem onClick={() => handleOpenGender("female")}>
             Female
           </DropdownItem>
-          <DropdownItem onClick={() => handleOpenGender('male')}>
+          <DropdownItem onClick={() => handleOpenGender("male")}>
             Male
           </DropdownItem>
-          <DropdownItem onClick={() => handleOpenGender('genderless')}>
+          <DropdownItem onClick={() => handleOpenGender("genderless")}>
             Fenderless
           </DropdownItem>
-          <DropdownItem onClick={() => handleOpenGender('unknown')}>
+          <DropdownItem onClick={() => handleOpenGender("unknown")}>
             Unknown
           </DropdownItem>
         </DropdownContent>
