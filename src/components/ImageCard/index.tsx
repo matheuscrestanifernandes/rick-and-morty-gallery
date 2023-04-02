@@ -12,7 +12,12 @@ import {
   IconPinActive,
 } from "../../styles/imageCard";
 
-function ImageCard({ characters, isFavoriteScreen }: any) {
+interface ImageCardProps {
+  characters: Character[];
+  isFavoriteScreen: boolean;
+}
+
+function ImageCard({ characters, isFavoriteScreen }: ImageCardProps) {
   const { toggleFavorite } = useContext(CharacterContext);
 
   return (

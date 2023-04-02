@@ -19,17 +19,9 @@ export default function Filters() {
     setIsOpenStatus(false);
   }
 
-  function handleCloseStatus(status: boolean) {
-    setIsOpenStatus(status);
-  }
-
   function handleOpenGender(gender: string) {
     getCharacterByGender(gender);
     setIsOpenGender(false);
-  }
-
-  function handleCloseGender(status: boolean) {
-    setIsOpenGender(status);
   }
 
   return (

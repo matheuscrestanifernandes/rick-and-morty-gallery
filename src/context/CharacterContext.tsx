@@ -32,13 +32,13 @@ type CharacterContextProps = {
   children: ReactNode;
 };
 
+const storageKey = "@galleryrickandmorty";
+
 export function CharacterProvider({ children }: CharacterContextProps) {
   const [pageNumber, setPageNumber] = useState<Number>(1);
   const [characters, setCharacters] = useState<Character[]>([]);
   const [favCharacters, setFavCharacters] = useState<Character[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-
-  const storageKey = "@galleryrickandmorty";
 
   useEffect(() => {
     async function fetchData() {
